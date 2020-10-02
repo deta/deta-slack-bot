@@ -7,6 +7,7 @@ from client import SlackClient
 app = FastAPI()
 slack_client = SlackClient()
 
+
 @app.post("/")
 async def events_handler(req: Request):
     timestamp = req.headers.get("X-Slack-Request-Timestamp")
@@ -16,27 +17,18 @@ async def events_handler(req: Request):
     if not utils.is_authorized(timestamp, signature, raw_body):
         raise HTTPException(status_code=401, detail="Unauthorized")
 
-    body = await req.json() 
+    body = await req.json()
     event = body.get("event")
 
     # ignore other events
-    if event.get("type") != "member_joined_channel":
+    if event.get("type") != "team_join":
         return "ok"
 
-    # ignore if channel is not channel we want to notify on
-    if event.get("channel") != slack_client.channel:
-        return "ok"
-
-    user = event.get("user")
+    user_id = event.get("user").get("id")
 
     # open a conv
-    channel_id = slack_client.open_conv(user)
+    channel_id = slack_client.open_conv(user_id)
 
     # send post message
-    msg = f'Hello <@{user}>!, welcome to our workspace!'
-    slack_client.post_message(channel_id, msg)
-    return "ok"
-
-@app.get("/")
-def index():
+    slack_client.post_message(channel_id, utils.welcome_message(user_id))
     return "ok"
