@@ -16,7 +16,7 @@ async def events_handler(req: Request):
     # slack sometimes sends same event multiple times
     # if response isn't fast enough
     # TODO: make everything async
-    if req.headers.get("X-Slack-Retry-Num"):
+    if req.headers.get("X-Slack-Retry-Reason") == "http_timeout" and req.headers.get("X-Slack-Retry-Num"):
         return "ok"
 
     raw_body = await req.body()
