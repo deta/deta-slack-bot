@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 
 
-WEBHOOK_SECRET = os.getenv("WEBHOOK_SECRET")
+WEBHOOK_SECRET = os.getenv("SECRET_TOKEN")
 GITHUB_LINK = os.getenv("GITHUB_LINK")
 
 
