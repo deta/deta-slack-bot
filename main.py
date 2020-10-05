@@ -12,6 +12,13 @@ slack_client = SlackClient()
 async def events_handler(req: Request):
     timestamp = req.headers.get("X-Slack-Request-Timestamp")
     signature = req.headers.get("X-Slack-Signature")
+
+    # slack sometimes sends same event multiple times
+    # if response isn't fast enough
+    # TODO: make everything async
+    if req.headers.get("X-Slack-Retry-Num"):
+        return "ok"
+
     raw_body = await req.body()
 
     if not utils.is_authorized(timestamp, signature, raw_body):
