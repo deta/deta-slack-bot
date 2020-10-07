@@ -38,12 +38,13 @@ Our docs and quickstart guides: https://docs.deta.sh
 
 Our channels:
 
-#bugs: report any bugs to us
-#feature_requests: if you want to request a feature get shipped
-#show: show off your Deta projects
-#programming_help: if you need help on anything
+<#CTYQCDXFE>: feel free to say hi and introduce yourself here
+<#CTYQCDLG4>: show off your Deta projects
+<#C0100T3NMUH>: if you want to request a feature get shipped
+<#CUJQK3NSC>: report any bugs to us
+<#CUX8BUW4U>: if you need help on anything
 
-You can message @mustafa, @Max or @Aavash anytime you want for any feedback or questions.
+You can message <@UU1EJS3UN>, <@UTLEJ2DLJ> or <@UTYQFAPRS> anytime you want for any feedback or questions.
 
 I run on Deta myself, you can check out my source code here: %s
 """ % (
