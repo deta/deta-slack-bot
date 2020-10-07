@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 
 
-WEBHOOK_SECRET = os.getenv("SECRET_TOKEN")
+SECRET_TOKEN = os.getenv("SECRET_TOKEN")
 GITHUB_LINK = os.getenv("GITHUB_LINK")
 
 
@@ -12,7 +12,7 @@ def calc_signature(version: str, timestamp: str, body: str):
     base_string = f"{version}:{timestamp}:{body}"
 
     digest = hmac.new(
-        key=WEBHOOK_SECRET.encode("utf-8"),
+        key=SECRET_TOKEN.encode("utf-8"),
         msg=base_string.encode("utf-8"),
         digestmod="sha256",
     ).hexdigest()
