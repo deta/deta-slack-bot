@@ -38,11 +38,8 @@ Our docs and quickstart guides: https://docs.deta.sh
 
 Our channels:
 
-<#CTYQCDXFE>: feel free to say hi and introduce yourself here
-<#CTYQCDLG4>: show off your Deta projects
-<#C0100T3NMUH>: if you want to request a feature get shipped
-<#CUJQK3NSC>: report any bugs to us
-<#CUX8BUW4U>: if you need help on anything
+<#CTYQCDXFE>: Get help from the Deta team and report issues
+<#CTYQCDLG4>: Show your creations
 
 You can message <@UU1EJS3UN>, <@UTLEJ2DLJ> or <@UTYQFAPRS> anytime you want for any feedback or questions.
 
